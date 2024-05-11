@@ -20,22 +20,28 @@
 
 
     <style>
+        /* Main Style Adjustments for Responsiveness */
         .skills-container {
             display: flex;
-            justify-content: space-around;
-            padding: 40px 0;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
         }
 
         .skill {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100px;
+            margin-bottom: 20px;
+            width: 100%;
+            /* Ajusta el ancho para mobile */
         }
 
         .skill-icon {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            /* Reducido para móviles */
+            height: 60px;
+            /* Mantener la proporción */
             margin-bottom: 10px;
         }
 
@@ -47,6 +53,56 @@
 
         .text-center {
             text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (min-width: 768px) {
+            .skills-container {
+                flex-direction: row;
+                justify-content: space-around;
+                padding: 40px 0;
+            }
+
+            .skill {
+                margin-bottom: 0;
+                width: 150px;
+                /* Ajusta según necesidad */
+            }
+
+            .skill-icon {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .skills-container {
+                padding: 60px 0;
+            }
+
+            .skill {
+                width: 200px;
+                /* Ajusta según necesidad */
+            }
+        }
+
+        /* Asegura que los textos y botones dentro de 'about' y 'project' se ajusten bien */
+        .about-text,
+        .proyect-content {
+            padding: 20px;
+        }
+
+        @media (min-width: 768px) {
+
+            .about-text,
+            .proyect-content {
+                padding: 0;
+                /* Elimina el padding en tamaños mayores */
+            }
         }
     </style>
 </head>
@@ -108,7 +164,6 @@
                             <div class="animated-info">
                                 <span class="animated-item">ChechoEl</span>
                                 <span class="animated-item">Developer</span>
-                                <span class="animated-item">Batman</span>
                             </div>
                         </h1>
 
@@ -120,7 +175,9 @@
                         </p>
 
                         <div class="custom-btn-group mt-4">
-                            <a href="#" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i>Descargar CV</a>
+                            <!-- <a href="#" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i>Descargar CV</a> -->
+                            <a href="https://brchecho.github.io/CVSergioConsterla.pdf" download="CVSergioConsterla.pdf"
+                                class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i>Descargar CV</a>
                             <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">¡Contactame!</a>
                         </div>
                     </div>
@@ -128,7 +185,7 @@
 
                 <div class="col-lg-5 col-md-12 col-12">
                     <div class="about-image svg">
-                        <!-- <img src="images/undraw/undraw_software_engineer_lvl5.svg" class="img-fluid" alt="svg image"> -->
+                        <!-- <img src="undraw_software_engineer_lvl5.svg" class="img-fluid" alt="svg image"> -->
                         <img src="loco rene.jpg" class="img-fluid" alt="svg image">
                     </div>
                 </div>
@@ -273,7 +330,7 @@
                 <!-- Primera fila -->
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="captura1.png" width="500px" class="ml-4 mt-4 rounded"
+                        <img src="captura1.png" width="500px" class="mt-4 rounded"
                             style="box-shadow: 0px 1px 13px -1px;">
                     </div>
                     <div class="col-lg-6">
@@ -295,7 +352,7 @@
                 <!-- Segunda fila -->
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="capture3.png" width="500px" class="ml-4 mt-4 rounded"
+                        <img src="capture3.png" width="500px" class="mt-4 rounded"
                             style="box-shadow: 0px 1px 13px -1px;">
                     </div>
                     <div class="col-lg-6">
@@ -316,7 +373,7 @@
                 <!-- Tercera fila -->
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="captura2.png" width="500px" class="ml-4 mt-4 rounded"
+                        <img src="captura2.png" width="500px" class="mt-4 rounded"
                             style="box-shadow: 0px 1px 13px -1px;">
                     </div>
                     <div class="col-lg-6">
@@ -349,7 +406,24 @@
             <div class="row">
 
                 <div class="col-lg-6 col-12">
-
+                    <div class="row">
+                        <div class="col-lg-6 col-12 mt-3">
+                            <p>
+                            <h3><strong><i class="bi bi-geo-alt-fill"></i> Ubicación</strong></h3>
+                            <span>Villa las Acacias, Pasaje Tres, 93, San Felipe, Chile</span>
+                            </p>
+                            <br />
+                            <p>
+                            <h3><strong><i class="bi bi-telephone"></i> Teléfono</strong></h3>
+                            <span>+569 47108720</span>
+                            </p>
+                            <br />
+                            <p>
+                            <h3><strong><i class="bi bi-envelope"></i> Mail</strong></h3>
+                            <span>alonso.consterla.d@gmail.com</span>
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
 
@@ -395,9 +469,7 @@
             <div class="row">
 
                 <div class="col-lg-12 col-12">
-                    <p class="copyright-text text-center">Copyright &copy; 2019 Company Name . All rights reserved</p>
-                    <p class="copyright-text text-center">Designed by <a rel="nofollow"
-                            href="https://www.facebook.com/tooplate">Tooplate</a></p>
+                    <p class="copyright-text text-center">Copyright &copy; ChechoEl Company . All rights reserved</p>
                 </div>
 
             </div>
