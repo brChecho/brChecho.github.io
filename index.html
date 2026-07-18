@@ -1,589 +1,391 @@
 <!doctype html>
-<html lang="en">
-
-
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description"
+        content="Portfolio de Sergio Consterla (brChecho) — Desarrollador Full Stack. HelPoroDesk, Angular, ASP.NET Core y Azure.">
+    <meta name="author" content="Sergio Consterla">
+    <title>brChecho · Portfolio</title>
 
-    <title>brChecho Portfolio</title>
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/unicons.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-    <!-- MAIN STYLE -->
-    <link rel="stylesheet" href="css/tooplate-style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-
-    <style>
-        /* Main Style Adjustments for Responsiveness */
-        .skills-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        .skill {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-            width: 100%;
-            /* Ajusta el ancho para mobile */
-        }
-
-        .skill-icon {
-            width: 60px;
-            /* Reducido para móviles */
-            height: 60px;
-            /* Mantener la proporción */
-            margin-bottom: 10px;
-        }
-
-        .skill-name {
-            text-align: center;
-            color: #333;
-            font-size: 14px;
-        }
-
-        .dark-mode .skill-name {
-            color: #ffffff;
-        }
-
-        .dark-mode .company-name {
-            color: #FCC333;
-        }
-
-        .dark-mode .project-name {
-            color: #FCC333;
-        }
-
-        .dark-mode .contact-label {
-            color: #FCC333;
-        }
-
-        .titulo{
-            color: #FCC333;
-        }
-
-        .dark-mode .titulo{
-            color: white;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        @media (min-width: 768px) {
-            .skills-container {
-                flex-direction: row;
-                justify-content: space-around;
-                padding: 40px 0;
-            }
-
-            .skill {
-                margin-bottom: 0;
-                width: 150px;
-                /* Ajusta según necesidad */
-            }
-
-            .skill-icon {
-                width: 80px;
-                height: 80px;
-            }
-        }
-
-        @media (min-width: 992px) {
-            .skills-container {
-                padding: 60px 0;
-            }
-
-            .skill {
-                width: 200px;
-                /* Ajusta según necesidad */
-            }
-        }
-
-        /* Asegura que los textos y botones dentro de 'about' y 'project' se ajusten bien */
-        .about-text,
-        .proyect-content {
-            padding: 20px;
-        }
-
-        @media (min-width: 768px) {
-
-            .about-text,
-            .proyect-content {
-                padding: 0;
-                /* Elimina el padding en tamaños mayores */
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/portfolio.css">
 </head>
 
 <body>
 
-    <!-- MENU -->
-    <nav class="navbar navbar-expand-sm navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">brChecho</a>
+    <nav class="site-nav" id="siteNav" aria-label="Principal">
+        <div class="nav-inner">
+            <a class="brand" href="#about">br<span>Checho</span></a>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                <span class="navbar-toggler-icon"></span>
-                <span class="navbar-toggler-icon"></span>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link"><span data-hover="Yo">Yo</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#resume" class="nav-link"><span data-hover="Experiencia">Experiencia</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#project" class="nav-link"><span data-hover="Proyectos">Proyectos</span></a>
-                    </li>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">Inicio</a></li>
+                <li><a href="#resume">Experiencia</a></li>
+                <li><a href="#habilities">Skills</a></li>
+                <li><a href="#project">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
 
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link"><span data-hover="Contacto">Contacto</span></a>
-                    </li>
-                </ul>
-
-                <ul class="navbar-nav ml-lg-auto">
-                    <div class="ml-lg-4">
-                        <div class="color-mode d-lg-flex justify-content-center align-items-center">
-                            <i class="color-mode-icon"></i>
-                            Color mode
-                        </div>
-                    </div>
-                </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar tema">
+                    <i class="bi bi-moon-stars" id="themeIcon"></i>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- ABOUT -->
-    <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
-        <div class="container">
-            <div class="row">
+    <!-- HERO -->
+    <section class="hero" id="about">
+        <div class="container-port hero-grid">
+            <div>
+                <h1 class="hero-brand">br<em>Checho</em></h1>
+                <p class="hero-title">Desarrollador Full Stack</p>
+                <p class="hero-copy">
+                    Construyo productos web de punta a punta: APIs, autenticación, workflows y despliegue en Azure.
+                    Hoy impulso HelPoroDesk en Voultech con Angular 19 y ASP.NET Core 8.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn-port btn-port-primary" href="https://brchecho.github.io/CVSergioConsterla.pdf"
+                        target="_blank" rel="noopener">
+                        <i class="bi bi-file-earmark-text"></i> Descargar CV
+                    </a>
+                    <a class="btn-port btn-port-ghost" href="#project">Ver proyectos</a>
+                    <a class="btn-port btn-port-ghost" href="#contact">Contactar</a>
+                </div>
+            </div>
 
-                <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
-                    <div class="about-text">
-                        <small class="small-text">Bienvenido a <span class="mobile-block">mi portfolio
-                                website!</span></small>
-                        <h1 class="animated animated-text">
-                            <span class="mr-2">Hola!, Soy</span>
-                            <div class="animated-info">
-                                <span class="animated-item">Sergio Consterla</span>
-                                <span class="animated-item">Desarrollador Web</span>
-                            </div>
-                        </h1>
+            <div class="hero-visual">
+                <div class="hero-visual-frame">
+                    <img src="images/project/helporodesk.png" alt="Dashboard de HelPoroDesk">
+                </div>
+                <div class="hero-badge">
+                    <strong>HelPoroDesk</strong>
+                    Live en Azure · Chile Central
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- EXPERIENCIA -->
+    <section class="section experience" id="resume">
+        <div class="container-port exp-layout">
+            <aside class="exp-intro">
+                <span class="section-kicker">Trayectoria</span>
+                <h2>Experiencia laboral</h2>
+                <p>Del soporte de aplicaciones legacy al diseño full stack de plataformas en producción.</p>
+                <nav class="exp-jump" aria-label="Roles">
+                    <a href="#exp-voultech">Voultech</a>
+                    <a href="#exp-pentavida">Pentavida</a>
+                    <a href="#exp-minecon">Ministerio</a>
+                    <a href="#exp-dgr">GrupoDGR</a>
+                </nav>
+            </aside>
+
+            <div class="exp-stream">
+                <article class="exp-step is-current reveal" id="exp-voultech">
+                    <div class="exp-step-rail" aria-hidden="true"></div>
+                    <div class="exp-step-body">
+                        <div class="exp-step-meta">
+                            <span class="exp-index">01</span>
+                            <span class="exp-place">Voultech</span>
+                            <span class="exp-now">Actual</span>
+                        </div>
+                        <h3 class="exp-role">Desarrollador Full Stack</h3>
                         <p>
-                            Profesional titulado de la carrera de Ingeniería Informática del Instituto Profesional
-                            DuocUc con conocimientos en las áreas tecnológicas de la información, capaz de analizar,
-                            diseñar, desarrollar, implementar y gestionar proyectos informáticos velando por su
-                            seguridad y calidad, con manejo de Excel avanzado, dominio del idioma inglés medio y
-                            capacidad de trabajo en equipo, proactivo, dispuesto a aprender y responsable.
+                            Desarrollo y evolución de HelPoroDesk, plataforma de gestión de tickets y flujos de soporte.
+                            Implementación full stack con Angular 19, ASP.NET Core 8, EF Core y SQL Server.
+                            Diseño de APIs REST, autenticación JWT, roles y permisos, workflows, carga de documentos,
+                            notificaciones por correo y despliegue automatizado en Azure mediante GitHub Actions.
+                            Aplicación de Git en el flujo diario de trabajo.
                         </p>
-
-                        <div class="custom-btn-group mt-4">
-                            <!-- <a href="#" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i>Descargar CV</a> -->
-                            <a href="https://brchecho.github.io/CVSergioConsterla.pdf" target="_blank"
-                                class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i>Descargar CV</a>
-                            <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">¡Contactame!</a>
+                        <div class="exp-tools">
+                            <span class="tool-chip"><img src="images/iconos/angular-logo.png" alt=""> Angular 19</span>
+                            <span class="tool-chip"><img src="images/iconos/netcore-logo.png" alt=""> ASP.NET Core 8</span>
+                            <span class="tool-chip"><img src="images/iconos/sqlserver-logo.png" alt=""> SQL Server</span>
+                            <span class="tool-chip"><i class="bi bi-cloud"></i> Azure</span>
+                            <span class="tool-chip"><i class="bi bi-github"></i> GitHub Actions</span>
+                            <span class="tool-chip"><img src="images/iconos/git-logo.png" alt=""> Git</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="col-lg-5 col-md-12 col-12">
-                    <div class="about-image svg">
-                        <img src="images/undraw/header_img.png" class="img-fluid" alt="svg image">
+                <article class="exp-step reveal" id="exp-pentavida">
+                    <div class="exp-step-rail" aria-hidden="true"></div>
+                    <div class="exp-step-body">
+                        <div class="exp-step-meta">
+                            <span class="exp-index">02</span>
+                            <span class="exp-place">Pentavida S.A.</span>
+                            <span class="exp-loc">Santiago</span>
+                        </div>
+                        <h3 class="exp-role">Ingeniero de Software</h3>
+                        <p>
+                            Mantención de aplicaciones web en ASP.NET y bases de datos SQL Server 2016,
+                            asegurando estabilidad y continuidad operativa.
+                        </p>
+                        <div class="exp-tools">
+                            <span class="tool-chip"><img src="images/iconos/net-logo.png" alt=""> .NET</span>
+                            <span class="tool-chip"><img src="images/iconos/sqlserver-logo.png" alt=""> SQL Server</span>
+                            <span class="tool-chip"><img src="images/iconos/git-logo.png" alt=""> Git</span>
+                        </div>
                     </div>
-                </div>
+                </article>
 
+                <article class="exp-step reveal" id="exp-minecon">
+                    <div class="exp-step-rail" aria-hidden="true"></div>
+                    <div class="exp-step-body">
+                        <div class="exp-step-meta">
+                            <span class="exp-index">03</span>
+                            <span class="exp-place">Ministerio de Economía</span>
+                            <span class="exp-loc">Santiago</span>
+                        </div>
+                        <h3 class="exp-role">Analista Desarrollador</h3>
+                        <p>
+                            Desarrollo de soluciones para clientes internos y externos con ASP.NET / Core y Entity Framework,
+                            APIs REST, JavaScript, SQL Server y control de versiones con Git / Azure DevOps.
+                        </p>
+                        <div class="exp-tools">
+                            <span class="tool-chip"><img src="images/iconos/net-logo.png" alt=""> .NET</span>
+                            <span class="tool-chip"><img src="images/iconos/javascript-logo.png" alt=""> JavaScript</span>
+                            <span class="tool-chip"><img src="images/iconos/git-logo.png" alt=""> Git</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="exp-step reveal" id="exp-dgr">
+                    <div class="exp-step-rail" aria-hidden="true"></div>
+                    <div class="exp-step-body">
+                        <div class="exp-step-meta">
+                            <span class="exp-index">04</span>
+                            <span class="exp-place">Consultoría GrupoDGR</span>
+                            <span class="exp-loc">San Antonio</span>
+                        </div>
+                        <h3 class="exp-role">Programador Web</h3>
+                        <p>
+                            Desarrollo de aplicaciones web con PHP 7, Laravel/Jetstream, SQL Server 2016,
+                            PL/SQL y JavaScript.
+                        </p>
+                        <div class="exp-tools">
+                            <span class="tool-chip"><img src="images/iconos/php-logo.png" alt=""> PHP</span>
+                            <span class="tool-chip"><img src="images/iconos/laravel-logo.png" alt=""> Laravel</span>
+                            <span class="tool-chip"><img src="images/iconos/javascript-logo.png" alt=""> JavaScript</span>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- FEATURES -->
-    <section class="resume py-5 d-lg-flex justify-content-center align-items-center" id="resume">
-        <div class="container">
-            <div class="row">
-
-                <div class="offset-lg-3 offset-md-0">
-                    <h2 class="mb-4 text-center"><i class="bi bi-motherboard"></i> Experiencia Laboral</h2>
-
-                    <div class="timeline">
-
-                        <!-- PRACTICA DGR -->
-                        <div class="timeline-wrapper">
-                            <div class="timeline-yr">
-                                <span></span>
-                            </div>
-                            <div class="timeline-info">
-                                <h3>
-                                    <span class="titulo">Programador Web</span>
-                                    <small class="company-name">Consultoría GrupoDGR | San Anotonio, Valparaíso</small>
-                                </h3>
-                                <!-- <span class="badge bg-dark text-white">Mayo 2021 - Julio 2021</span> -->
-                                <p class="mt-1" style="font-size: 16px">
-                                    Encargado del desarrollo de aplicaciones web utilizando PHP 7, Laravel/Jetstream,
-                                    manejo de SQL Server 2016, programación PL/SQL y JavaScript.
-                                </p>
-                                <div class="timeline-habilities">
-                                    <p style="font-size: 12px;"><strong>Herramientas Utilizadas:</strong></p>
-                                    <img class="ml-2" src="images/iconos/php-logo.png" width="30px" alt="PHP">
-                                    <img class="ml-2" src="images/iconos/javascript-logo.png" width="30px" alt="JavaScript">
-                                    <!-- <img class="ml-2" src="images/iconos/sqlserver-logo.png" width="30px"> -->
-                                    <img class="ml-2" src="images/iconos/laravel-logo.png" width="30px" alt="Laravel">
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- TRABAJO PROFESIONAL MINISTERIO -->
-                        <div class="timeline-wrapper">
-                            <div class="timeline-yr">
-                                <span></span>
-                            </div>
-                            <div class="timeline-info">
-                                <h3>
-                                    <span class="titulo">Analista Desarrollador</span>
-                                    <small class="company-name">Ministerio de Economía, Fomento y Turismo |
-                                        Santiago</small>
-                                </h3>
-                                <!-- <span class="badge bg-dark text-white">Noviembre 2021 - Junio 2023</span> -->
-                                <p class="mt-1" style="font-size: 16px">
-                                    Responsable del desarrollo de soluciones informáticas para clientes internos y
-                                    externos, liderando proyectos web con ASP .NET/Core y Entity Framework, además de
-                                    desarrollar API REST. Gestiona JavaScript, bases de datos SQL Server y control de
-                                    versiones con Git/Azure DevOps.
-                                </p>
-                                <div class="timeline-habilities">
-                                    <p style="font-size: 12px;"><strong>Herramientas Utilizadas:</strong></p>
-                                    <img class="ml-2" src="images/iconos/net-logo.png" width="30px" alt=".NET">
-                                    <img class="ml-2" src="images/iconos/javascript-logo.png" width="30px" alt="JavaScript">
-                                    <!-- <img class="ml-2" src="images/iconos/sqlserver-logo.png" width="30px"> -->
-                                    <img class="ml-2" src="images/iconos/git-logo.png" width="30px" alt="Git">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- TRABAJO PROFESIONAL PENTAVIDA -->
-                        <div class="timeline-wrapper">
-                            <div class="timeline-yr">
-                                <span></span>
-                            </div>
-                            <div class="timeline-info">
-                                <h3>
-                                    <span class="titulo">Ingeniero de Software</span>
-                                    <small class="company-name">Pentavida S.A. | Santiago</small>
-                                </h3>
-                                <!-- <span class="badge bg-dark text-white">Agosto 2023 - Novimiembre 2023</span> -->
-                                <p class="mt-1" style="font-size: 16px">
-                                    Encargado de mantener aplicaciones Web desarrolladas en ASP.NET, mantención de base
-                                    de datos SQL Server 2016.
-                                </p>
-                                <div class="timeline-habilities">
-                                    <p style="font-size: 12px;"><strong>Herramientas Utilizadas:</strong></p>
-                                    <img class="ml-2" src="images/iconos/net-logo.png" width="30px" alt=".NET">
-                                    <img class="ml-2" src="images/iconos/javascript-logo.png" width="30px" alt="JavaScript">
-                                    <!-- <img class="ml-2" src="images/iconos/sqlserver-logo.png" width="30px"> -->
-                                    <img class="ml-2" src="images/iconos/git-logo.png" width="30px" alt="Git">
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
+    <!-- SKILLS -->
+    <section class="section section-alt" id="habilities">
+        <div class="container-port">
+            <div class="section-head">
+                <span class="section-kicker">Stack</span>
+                <h2>Herramientas que domino</h2>
+                <p>Frontend, backend, datos, autenticación y entrega continua en la nube.</p>
             </div>
-        </div>
-    </section>
 
-    <!-- HABILIDADES -->
-    <section class="habilities py-5" id="habilities">
-        <div class="container">
-            <h2 class="text-center">Habilidades</h2>
-            <div class="skills-container">
-                <div class="skill">
-                    <img src="images/iconos/javascript-logo.png" alt="JavaScript" class="skill-icon">
-                    <div class="skill-name">Javascript</div>
-                </div>
-                <div class="skill">
-                    <img src="images/iconos/css-logo.png" alt="CSS" class="skill-icon">
-                    <div class="skill-name">CSS</div>
-                </div>
-                <div class="skill">
-                    <img src="images/iconos/html-logo.png" alt="HTML" class="skill-icon">
-                    <div class="skill-name">HTML</div>
-                </div>
-                <div class="skill">
-                    <img src="images/iconos/netlogo.png" alt=".NET" class="skill-icon">
-                    <div class="skill-name">.Net</div>
-                </div>
-                <div class="skill">
-                    <img src="images/iconos/angular-logo.png" alt="Angular" class="skill-icon">
+            <div class="skills-grid">
+                <div class="skill-item reveal">
+                    <img class="skill-icon" src="images/iconos/angular-logo.png" alt="Angular">
                     <div class="skill-name">Angular</div>
+                    <div class="skill-meta">v19</div>
                 </div>
-                <div class="skill">
-                    <img src="images/iconos/git-logo.png" alt="Git" class="skill-icon">
+                <div class="skill-item reveal">
+                    <img class="skill-icon" src="images/iconos/netcore-logo.png" alt="ASP.NET Core">
+                    <div class="skill-name">ASP.NET Core</div>
+                    <div class="skill-meta">.NET 8</div>
+                </div>
+                <div class="skill-item reveal">
+                    <div class="skill-icon-fallback"><i class="bi bi-database"></i></div>
+                    <div class="skill-name">EF Core</div>
+                    <div class="skill-meta">ORM</div>
+                </div>
+                <div class="skill-item reveal">
+                    <img class="skill-icon" src="images/iconos/sqlserver-logo.png" alt="SQL Server">
+                    <div class="skill-name">SQL Server</div>
+                    <div class="skill-meta">Azure SQL</div>
+                </div>
+                <div class="skill-item reveal">
+                    <div class="skill-icon-fallback"><i class="bi bi-braces"></i></div>
+                    <div class="skill-name">APIs REST</div>
+                    <div class="skill-meta">Diseño &amp; consumo</div>
+                </div>
+                <div class="skill-item reveal">
+                    <div class="skill-icon-fallback"><i class="bi bi-shield-lock"></i></div>
+                    <div class="skill-name">JWT</div>
+                    <div class="skill-meta">Auth &amp; roles</div>
+                </div>
+                <div class="skill-item reveal">
+                    <div class="skill-icon-fallback"><i class="bi bi-cloud"></i></div>
+                    <div class="skill-name">Azure</div>
+                    <div class="skill-meta">App Service</div>
+                </div>
+                <div class="skill-item reveal">
+                    <div class="skill-icon-fallback"><i class="bi bi-github"></i></div>
+                    <div class="skill-name">GitHub Actions</div>
+                    <div class="skill-meta">CI/CD</div>
+                </div>
+                <div class="skill-item reveal">
+                    <img class="skill-icon" src="images/iconos/javascript-logo.png" alt="JavaScript">
+                    <div class="skill-name">JavaScript</div>
+                    <div class="skill-meta">TypeScript-ready</div>
+                </div>
+                <div class="skill-item reveal">
+                    <img class="skill-icon" src="images/iconos/html-logo.png" alt="HTML">
+                    <div class="skill-name">HTML</div>
+                    <div class="skill-meta">Semántica</div>
+                </div>
+                <div class="skill-item reveal">
+                    <img class="skill-icon" src="images/iconos/css-logo.png" alt="CSS">
+                    <div class="skill-name">CSS</div>
+                    <div class="skill-meta">UI moderna</div>
+                </div>
+                <div class="skill-item reveal">
+                    <img class="skill-icon" src="images/iconos/git-logo.png" alt="Git">
                     <div class="skill-name">Git</div>
+                    <div class="skill-meta">Flujo diario</div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- PROYECTOS -->
+    <section class="section" id="project">
+        <div class="container-port">
+            <div class="section-head">
+                <span class="section-kicker">Trabajo</span>
+                <h2>Proyectos</h2>
+                <p>Productos reales con foco en soporte, e-commerce y experiencia de usuario.</p>
+            </div>
 
-    <!-- PROJECTS -->
-    <section class="project py-5 py-5" id="project">
-        <div class="container">
-            <h2 class="text-center"><i class="bi bi-code-slash"></i> Proyectos</h2>
+            <div class="project-list">
 
-            <div class="proyect-content" style="max-width: auto;">
-
-                <!-- HelPoroDesk -->
-                <div class="row">
-                    <div class="col-lg-6">
-                        <img src="images/project/helporodesk.png" width="500" class="mt-4 rounded"
-                            style="box-shadow: 0px 1px 13px -1px;"
-                            alt="HelPoroDesk - mesa de tickets">
+                <article class="project-row reveal">
+                    <div class="project-media">
+                        <img src="images/project/helporodesk.png" alt="HelPoroDesk - mesa de tickets">
                     </div>
-                    <div class="col-lg-6">
-                        <h4 class="project-name mt-5"><i class="bi bi-chevron-right"></i> HelPoroDesk</h4>
-                        <p style="font-size: 16px">
-                            <strong>HelPoroDesk</strong> es una mesa de tickets / soporte para equipos:
-                            portal del solicitante, triaje, atención, validación y SLA.
-                            Stack <strong>Angular 19</strong> + <strong>ASP.NET Core 8</strong> +
-                            <strong>EF Core</strong> / Azure SQL, con despliegue CI/CD a Azure App Service.
+                    <div>
+                        <h3 class="project-name"><i class="bi bi-chevron-right"></i> HelPoroDesk</h3>
+                        <p>
+                            Mesa de tickets y soporte para equipos: portal del solicitante, triaje, atención,
+                            validación y SLA. Stack Angular 19 + ASP.NET Core 8 + EF Core / Azure SQL,
+                            con CI/CD a Azure App Service.
                         </p>
-                        <div class="buttons-project">
-                            <a target="_blank" href="https://github.com/brChecho/HelPoroDesk"
-                                class="btn btn-secondary text-white btn-rounded">
+                        <div class="project-actions">
+                            <a class="btn-soft" target="_blank" rel="noopener"
+                                href="https://github.com/brChecho/HelPoroDesk">
                                 <i class="bi bi-github"></i> Code
                             </a>
-                            <a target="_blank"
-                                href="https://app-helporodesk-qa-ahdrg5fydtc5cmdj.canadacentral-01.azurewebsites.net"
-                                class="btn btn-secondary text-white btn-rounded">
+                            <a class="btn-soft btn-soft-outline" target="_blank" rel="noopener"
+                                href="https://app-helporodesk-cl-hughdmbsfqbmc3cz.chilecentral-01.azurewebsites.net/">
+                                <i class="bi bi-box-arrow-up-right"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-row reveal">
+                    <div class="project-media">
+                        <img src="images/project/capture3.png" alt="Poro Leo">
+                    </div>
+                    <div>
+                        <h3 class="project-name"><i class="bi bi-chevron-right"></i> Poro Leo</h3>
+                        <p>
+                            Tienda en línea de libros físicos con interfaz intuitiva y sistemas de pago seguros
+                            para una compra simple y confiable.
+                        </p>
+                        <div class="project-actions">
+                            <a class="btn-soft" href="https://github.com/brChecho/WebPoroLeo" target="_blank"
+                                rel="noopener">
+                                <i class="bi bi-github"></i> Code
+                            </a>
+                            <button class="btn-soft btn-soft-outline" disabled type="button">
                                 <i class="bi bi-link-45deg"></i> Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Primera fila -->
-                <div class="row">
-                    <div class="col-lg-6">
-                        <img src="images/project/captura1.png" width="500" class="mt-4 rounded"
-                            style="box-shadow: 0px 1px 13px -1px;" alt="Spotify Clone">
-                    </div>
-                    <div class="col-lg-6">
-                        <h4 class="project-name mt-5"><i class="bi bi-chevron-right"></i> Spotify Clone</h4>
-                        <p style="font-size: 16px">
-                            Clon de <strong>Spotify</strong> construido originalmente a partir del proyecto de Midudev.
-                            Con
-                            funcionalidades extras añadidas como: cambio de canción a siguiente o previa, layout
-                            principal modificado, botón de “mostrar todo”, vista “Estas escuchando” implementada.
-                        </p>
-                        <div class="buttons-project">
-                            <a target="_blank" href="https://github.com/brChecho/WebPoroLeo" style="cursor: pointer;" class="btn btn-secondary text-white btn-rounded"><i class="bi bi-github"></i>
-                                Code
-                            </a>
-
-                            <a href="#!" style="cursor: pointer;" class="btn btn-secondary text-white btn-rounded"><i class="bi bi-link-45deg"></i>
-                                Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Segunda fila -->
-                <div class="row">
-                    <div class="col-lg-6">
-                        <img src="images/project/capture3.png" width="500" class="mt-4 rounded"
-                            style="box-shadow: 0px 1px 13px -1px;" alt="Poro Leo">
-                    </div>
-                    <div class="col-lg-6">
-                        <h4 class="project-name mt-5"><i class="bi bi-chevron-right"></i> Poro Leo</h4>
-                        <p style="font-size: 16px">
-                            <strong>Poro Leo</strong> es una tienda en línea dedicada a la venta de libros físicos para
-                            lectores apasionados. Nuestra plataforma, desarrollada con una interfaz intuitiva y sistemas
-                            de pago seguros, facilita la compra de una amplia selección de libros.
-                        </p>
-                        <div class="buttons-project">
-                            <a href="https://github.com/brChecho/WebPoroLeo" class="btn btn-secondary btn-rounded"><i
-                                    class="bi bi-github"></i> Code</a>
-                            <button class="btn btn-secondary btn-rounded" disabled><i class="bi bi-link-45deg"></i>
-                                Demo
                             </button>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <!-- Tercera fila -->
-                <div class="row">
-                    <div class="col-lg-6">
-                        <img src="images/project/captura2.png" width="500" class="mt-4 rounded"
-                            style="box-shadow: 0px 1px 13px -1px;" alt="Ratmaimon">
+                <article class="project-row reveal">
+                    <div class="project-media">
+                        <img src="images/project/captura2.png" alt="Ratmaimon">
                     </div>
-                    <div class="col-lg-6">
-                        <h4 class="project-name mt-5"><i class="bi bi-chevron-right"></i> Ratmaimon</h4>
-                        <p style="font-size: 16px">
-                            <strong>Ratmaimon</strong> es una plataforma de comercio electrónico diseñada para ofrecer
-                            una experiencia de
-                            compra en línea eficiente y segura. Con una interfaz intuitiva y un sistema de pago seguro,
-                            facilita la exploración y compra de una variedad de productos. Desde moda hasta electrónica,
-                            encuentra todo lo que necesitas en un solo lugar.
+                    <div>
+                        <h3 class="project-name"><i class="bi bi-chevron-right"></i> Ratmaimon</h3>
+                        <p>
+                            Plataforma de e-commerce para exploración y compra de productos, con foco en
+                            usabilidad y un flujo de pago seguro.
                         </p>
-                        <div class="buttons-project">
-                            <a href="https://github.com/brChecho/SistemaInventario7"
-                                class="btn btn-secondary btn-rounded"><i class="bi bi-github"></i> Code</a>
-                            <button class="btn btn-secondary btn-rounded" disabled><i class="bi bi-link-45deg"></i>
-                                Demo</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- HelPoroDesk -->
-                <div class="row mt-5">
-                    <div class="col-lg-6">
-                        <img src="images/project/helporodesk.png" width="500" class="mt-4 rounded"
-                            style="box-shadow: 0px 1px 13px -1px;"
-                            alt="HelPoroDesk - mesa de tickets">
-                    </div>
-                    <div class="col-lg-6">
-                        <h4 class="project-name mt-5"><i class="bi bi-chevron-right"></i> HelPoroDesk</h4>
-                        <p style="font-size: 16px">
-                            <strong>HelPoroDesk</strong> es una mesa de tickets / soporte para equipos:
-                            portal del solicitante, triaje, atención, validación y SLA.
-                            Stack <strong>Angular 19</strong> + <strong>ASP.NET Core 8</strong> +
-                            <strong>EF Core</strong> / Azure SQL, con despliegue CI/CD a Azure App Service.
-                        </p>
-                        <div class="buttons-project">
-                            <a target="_blank" href="https://github.com/brChecho/HelPoroDesk"
-                                class="btn btn-secondary text-white btn-rounded">
+                        <div class="project-actions">
+                            <a class="btn-soft" href="https://github.com/brChecho/SistemaInventario7" target="_blank"
+                                rel="noopener">
                                 <i class="bi bi-github"></i> Code
                             </a>
-                            <a target="_blank"
-                                href="https://app-helporodesk-qa-ahdrg5fydtc5cmdj.canadacentral-01.azurewebsites.net"
-                                class="btn btn-secondary text-white btn-rounded">
+                            <button class="btn-soft btn-soft-outline" disabled type="button">
                                 <i class="bi bi-link-45deg"></i> Demo
-                            </a>
+                            </button>
                         </div>
                     </div>
-                </div>
-                
-            </div>
-
-
-
-
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact py-5" id="contact">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-6 col-12">
-                    <div class="row">
-                        <div class="col-lg-6 col-12 mt-3">
-
-                            <div class="mb-4">
-                                <h3 class="contact-label"><strong><i class="bi bi-geo-alt-fill"></i> Ubicación</strong>
-                                </h3>
-                                <p>Villa las Acacias, Pasaje Tres, 93, San Felipe, Chile</p>
-                            </div>
-
-                            <div class="mb-4">
-                                <h3 class="contact-label"><strong><i class="bi bi-telephone"></i> Teléfono</strong></h3>
-                                <p>+569 47108720</p>
-                            </div>
-
-
-                            <div class="mb-2">
-                                <h3 class="contact-label"><strong><i class="bi bi-envelope"></i> Mail</strong></h3>
-                                <p>alonso.consterla.d@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-6 col-12">
-                    <div class="contact-form">
-                        <h2 class="mb-4">¿Interesdado papu?, demosle</h2>
-
-                        <form action="" method="get">
-                            <div class="row">
-                                <div class="col-lg-6 col-12">
-                                    <input type="text" class="form-control" name="name" placeholder="Your Name"
-                                        id="name">
-                                </div>
-
-                                <div class="col-lg-6 col-12">
-                                    <input type="email" class="form-control" name="email" placeholder="Email"
-                                        id="email">
-                                </div>
-
-                                <div class="col-12">
-                                    <textarea name="message" rows="6" class="form-control" id="message"
-                                        placeholder="Message"></textarea>
-                                </div>
-
-                                <div class="ml-lg-auto col-lg-5 col-12">
-                                    <input type="submit" class="form-control submit-btn" value="Send Button">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+                </article>
 
             </div>
         </div>
     </section>
 
+    <!-- CONTACTO -->
+    <section class="section section-alt" id="contact">
+        <div class="container-port">
+            <div class="section-head">
+                <span class="section-kicker">Hablemos</span>
+                <h2>Contacto</h2>
+                <p>¿Tienes un proyecto o una oportunidad? Escribeme.</p>
+            </div>
 
-
-
-    <!-- FOOTER -->
-    <footer class="footer py-5">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-12 col-12">
-                    <p class="copyright-text text-center">Copyright &copy; ChechoEl Company . All rights reserved</p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-item">
+                        <h3 class="contact-label"><i class="bi bi-geo-alt-fill"></i> Ubicación</h3>
+                        <p>Villa las Acacias, Pasaje Tres, 93, San Felipe, Chile</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3 class="contact-label"><i class="bi bi-telephone"></i> Teléfono</h3>
+                        <p><a href="tel:+56947108720">+569 47108720</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3 class="contact-label"><i class="bi bi-envelope"></i> Mail</h3>
+                        <p><a href="mailto:alonso.consterla.d@gmail.com">alonso.consterla.d@gmail.com</a></p>
+                    </div>
                 </div>
 
+                <div class="contact-form-wrap">
+                    <h3 style="font-size:1.35rem;margin-bottom:1rem;">Enviar mensaje</h3>
+                    <form action="mailto:alonso.consterla.d@gmail.com" method="get" enctype="text/plain">
+                        <div class="form-row">
+                            <input class="form-control-port" type="text" name="name" placeholder="Tu nombre" required>
+                            <input class="form-control-port" type="email" name="email" placeholder="Email" required>
+                        </div>
+                        <textarea class="form-control-port" name="body" placeholder="Mensaje" required></textarea>
+                        <button class="btn-port btn-port-primary" type="submit">
+                            <i class="bi bi-send"></i> Enviar
+                        </button>
+                    </form>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container-port">
+            <p>© <span id="year"></span> brChecho · Sergio Consterla</p>
         </div>
     </footer>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/Headroom.js"></script>
-    <script src="js/jQuery.headroom.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/custom.js"></script>
-
+    <script src="js/portfolio.js"></script>
 </body>
 
 </html>
